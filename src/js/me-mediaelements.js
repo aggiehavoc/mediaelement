@@ -163,13 +163,13 @@ mejs.PluginMediaElement.prototype = {
 	},
 	
 	positionFullscreenButton: function(x,y,visibleAndAbove) {
-		if (this.pluginApi != null && this.pluginApi.positionFullscreenButton) {
+		if (this.pluginApi != null && typeof this.pluginApi.positionFullscreenButton == 'function') {
 			this.pluginApi.positionFullscreenButton(Math.floor(x),Math.floor(y),visibleAndAbove);
 		}
 	},
 	
 	hideFullscreenButton: function() {
-		if (this.pluginApi != null && this.pluginApi.hideFullscreenButton) {
+		if (this.pluginApi != null && typeof this.pluginApi.hideFullscreenButton == 'function') {
 			this.pluginApi.hideFullscreenButton();
 		}		
 	},	
@@ -246,27 +246,27 @@ mejs.PluginMediaElement.prototype = {
 				this.pluginElement.style.width = width + 'px';
 				this.pluginElement.style.height = height + 'px';
 			}
-			if (this.pluginApi != null && this.pluginApi.setVideoSize) {
+			if (this.pluginApi != null && typeof this.pluginApi.setVideoSize == 'function') {
 				this.pluginApi.setVideoSize(width, height);
 			}
 		//}
 	},
 
 	setFullscreen: function (fullscreen) {
-		if (this.pluginApi != null && this.pluginApi.setFullscreen) {
+		if (this.pluginApi != null && typeof this.pluginApi.setFullscreen == 'function') {
 			this.pluginApi.setFullscreen(fullscreen);
 		}
 	},
 	
 	enterFullScreen: function() {
-		if (this.pluginApi != null && this.pluginApi.setFullscreen) {
+		if (this.pluginApi != null && typeof this.pluginApi.setFullscreen == 'function') {
 			this.setFullscreen(true);
 		}		
 		
 	},
 	
 	exitFullScreen: function() {
-		if (this.pluginApi != null && this.pluginApi.setFullscreen) {
+		if (this.pluginApi != null && typeof this.pluginApi.setFullscreen == 'function') {
 			this.setFullscreen(false);
 		}
 	},	
