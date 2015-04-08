@@ -449,13 +449,13 @@ namespace SilverlightMediaElement
 		}
 
 		[ScriptableMember]
-		public void setVideoSize(int width, int height) {
-			this.Width = media.Width = width;
-			this.Height = media.Height = height;
+		public void setVideoSize(Double width, Double height) {
+			this.Width = media.Width = (int)width;
+			this.Height = media.Height = (int)height;
 		}
 
         [ScriptableMember]
-		public void positionFullscreenButton(int x, int y,bool visibleAndAbove) {
+		public void positionFullscreenButton(Double x, Double y,bool visibleAndAbove) {
             if (visibleAndAbove)
             {
                 //FullscreenButton.Visibility = System.Windows.Visibility.Collapsed;
